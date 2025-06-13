@@ -1,6 +1,3 @@
-Pelixy
-Postman Pelixy
-
 🎬 Pelixy - App de Recomendaciones de Películas
 Aplicación Android nativa desarrollada con Java y SQLite, que permite ver películas, buscar, y dejar comentarios.
 
@@ -11,7 +8,13 @@ Jaime Ccapacca Merino
 Jean Carlos Fasabi Orosco
 Osmar Mauricio Marca Peña
 Deysi Aracely Quintana Juarez
+
+
+
+
 🧠 Estructura de la Base de Datos
+
+
 -- Crear base de datos CREATE DATABASE PelixyDB; GO
 
 USE PelixyDB; GO
@@ -24,6 +27,8 @@ USE PelixyDB; GO
 
 -- Tabla de comentarios CREATE TABLE Comentarios ( id INT PRIMARY KEY IDENTITY(1,1), contenido NVARCHAR(MAX) NOT NULL, fecha DATETIME DEFAULT GETDATE(), autor NVARCHAR(100), pelicula_id INT NOT NULL, usuario_id INT, FOREIGN KEY (pelicula_id) REFERENCES Peliculas(id), FOREIGN KEY (usuario_id) REFERENCES Usuarios(id) ); GO
 
+
+
 🗂 Interfaces del APP
 MainActivity → Lista principal de películas.
 DetallePeliculaActivity → Muestra detalles + comentarios.
@@ -34,12 +39,16 @@ BuscarPeliculasActivity → Búsqueda por título.
 Node.js
 Express
 SQLite
+
+
 📁 Estructura
 config/database.js: Conexión a SQLite
 controllers/: Controladores de lógica
 models/: Modelos de entidades
 routes/: Rutas para API
 database/pelixy.db: Base de datos local
+
+
 📡 Endpoints del Backend
 GET /api/v1/peliculas → Lista películas
 POST /api/v1/comentarios → Guarda comentario
